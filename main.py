@@ -18,18 +18,19 @@ You will write two functions:
   * Call the `choose_practicum` function and save the result to a variable.
   * Print out a confirmation that says, "Congratulations, NAME, you are signed up for PRACTICUM" using an f-string so whatever the user gave as input'''
 
-signup = input("Choose a theatre course to sign up for: ")
 
 def choose_practicum():
+    signup = input("Choose a theatre course to sign up for: ")
     print(signup)
     if signup in ["Costumes" , "costumes" , "Costume" , "costume" , "Scenery" , "scenery" , "Lighting" , "lighting" , "Sound" , "sound"]:
         return signup
     else:
-        choose_practicum()
+        print("invalid choice \n")
+        return choose_practicum()
 
 def theatre_signup():
-    choose_practicum()
-    name = input("Enter your full name: ")
+    signup = choose_practicum()
+    name = input("Enter your name: ")
     confirm = (f"Congratulations, {name}, you are signed up for {signup}!")
     print(confirm)
 
